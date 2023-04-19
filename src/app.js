@@ -10,24 +10,24 @@ const server = http.createServer((req, res) => {
       chunks.push(str);
       const obj = JSON.parse(chunks)
       const value = obj.num1;
-
-      // Write the code here to check if the number is odd or even
-      if (value % 2 == 0) {
-        res.writeHead(200, { 'Content- Type': 'text / plain' });
-        res.end("The number is even");
+    
+     // Write the code here to check if the number is odd or even
+      if(value % 2 === 0){
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end(`The number ${value} is even`);
       }
-      else if(value %2 != 0) {
-        res.writeHead(404, { 'Content- Type': 'text / plain' });
-        res.end("The number is odd");
+      else if(value % 2 !== 0){
+        res.writeHead(404, {'Content-Type': 'text/plain'});
+        res.end(`The number ${value} is odd`);
       }
-       else {
-        res.writeHead(400, { 'Content- Type': 'text / plain' });
-        res.end("Bad request")
+      else{
+        res.writeHead(400, {'Content-Type': 'text/plain'});
+        res.end(`Error message`);
       }
-    });
+   });
   }
 
-
+  
 });
 
 
