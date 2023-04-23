@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
         res.end(`The number ${value} is odd`);
       }
       else{
-        res.writeHead(400, {'Content-Type': 'text/plain'});
+        res.writeHead(404, {'Content-Type': 'text/plain'});
         res.end(`Error message`);
       }
    });
